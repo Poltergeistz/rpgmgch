@@ -1,0 +1,14 @@
+{
+    "name":"Plateforme commerce",
+    "description": "",
+    "scripts": {
+    	"test" : "./vendor/bin/phpunit ./tests/tests.php",
+        "start" : "php -S localhost:8000 index.php"
+    },
+    "require": {
+        "php": "^7.0.30"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^6"
+    }
+}
