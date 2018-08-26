@@ -2,9 +2,11 @@
 // Step 1
 require_once './User.php';
 // Step 2 
-// require_once './Product.php'; 
+require_once './Product.php'; 
 require_once './Vegetable.php';
 require_once './Cloth.php';
+// Step 3
+require_once './Client.php';
 use PHPUnit\Framework\TestCase;
 class Tests extends TestCase
 {
@@ -14,6 +16,7 @@ class Tests extends TestCase
         $this->productClass = new Product('','','');
         $this->vegetableClass = new Vegetable('','','','','');
         $this->clothClass = new Cloth('','','','');
+        //$this->clientClass = new Client('','toto@toto.com','','','');
     }
 
     /*##########################################
@@ -54,6 +57,7 @@ class Tests extends TestCase
         $this->assertFileExists('./Vegetable.php');
         $this->assertFileExists('./Cloth.php');
         $this->assertFileExists('./products.php');
+        $this->assertFileExists('./testOrder.php');
     }
     // Check if file is readable
     public function testFileIsReadable()
@@ -66,16 +70,17 @@ class Tests extends TestCase
         $this->assertFileIsReadable('./Product.php');
         $this->assertFileIsReadable('./Vegetable.php');
         $this->assertFileIsReadable('./Cloth.php');
-        $this->assertFileIsreadable('./products.php');
+        $this->assertFileIsReadable('./products.php');
+        $this->assertFileIsReadable('./testOrder.php');
     }
     // Check if User class attribute "$_email" is an email
     public function testUserEmailIsAnEmail()
     {
-        $this->assertContains('@',$this->userClass->getEmail());
-        $this->assertContains('.',$this->userClass->getEmail());
-        /* $this->assertContains('^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*
-        @'.'[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$',$this->userClass->getEmail()); */
-        // $this->assertTrue(filter_var($this->userClass->getEmail(),FILTER_VALIDATE_EMAIL));
+        //$this->assertContains('@',$this->userClass->getEmail());
+        //$this->assertContains('.',$this->userClass->getEmail());
+        /* $this->assertContains('/^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*
+        @'.'[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$/',$this->userClass->getEmail()); */
+        $this->assertTrue((bool)filter_var($this->userClass->getEmail(),FILTER_VALIDATE_EMAIL));
     }
 
     /*##########################################
@@ -110,6 +115,10 @@ class Tests extends TestCase
     {
         $this->assertClassHasAttribute('_productorName',Vegetable::class);
         $this->assertClassHasAttribute('_expiresAt',Vegetable::class);
+        // Heritage from Product
+        $this->assertClassHasAttribute('_id',Vegetable::class);
+        $this->assertClassHasAttribute('_name',Vegetable::class);
+        $this->assertClassHasAttribute('_price',Vegetable::class);
     }
     // Check if Vegetable class attribute "$_productorName" is a String
     public function testVegetableProductorNameIsString()
@@ -132,11 +141,30 @@ class Tests extends TestCase
     public function testClothHasAttributes()
     {
         $this->assertClassHasAttribute('_brand',Cloth::class);
+        // Heritage from Product
+        $this->assertClassHasAttribute('_id',Cloth::class);
+        $this->assertClassHasAttribute('_name',Cloth::class);
+        $this->assertClassHasAttribute('_price',Cloth::class);
     }
     // Check if Cloth class attribute "$_brand" is a String
     public function testClothBrandIsString()
     {
         $this->assertInternalType('string',$this->clothClass->getBrand());
+    }
+
+    /*##########################################
+    ################# Step 3 ##################
+    #########################################*/
+    
+    // Check if Client class has attributes
+    public function testClientHasAttribute()
+    {
+        $this->assertClassHasAttribute('_billAmount', Client::class);
+        $this->assertClasshasAttribute('_cart', Client::class);
+        // Heritage from User
+        $this->assertClassHasAttribute('_id', Client::class);
+        $this->assertClassHasAttribute('_email', Client::class);
+        $this->assertClassHasAttribute('_createdAt', Client::class);
     }
 }
 ?>
