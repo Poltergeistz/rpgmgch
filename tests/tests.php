@@ -7,6 +7,8 @@ require_once __DIR__.'/../models/Vegetable.php';
 require_once __DIR__.'/../models/Cloth.php';
 // Step 3
 require_once __DIR__.'/../models/Client.php';
+// Step 5
+// require_once __DIR__.'/../views/validateOrder.php';
 use PHPUnit\Framework\TestCase;
 class Tests extends TestCase
 {
