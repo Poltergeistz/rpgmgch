@@ -1,8 +1,8 @@
 <?php 
 class User{
-    private $_id;
-    private $_email;
-    private $_createdAt;
+    protected $_id;
+    protected $_email;
+    protected $_createdAt;
 
     public function __construct($id, $email, $createdAt)
     {

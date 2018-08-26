@@ -1,7 +1,7 @@
 <?php
 class Cloth extends Product
 {
-    private $_brand;
+    protected $_brand;
 
     public function __construct($id, $name, $price,$brand)
     {

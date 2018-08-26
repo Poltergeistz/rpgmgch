@@ -3,7 +3,7 @@
     "description": "",
     "scripts": {
     	"test" : "./vendor/bin/phpunit ./tests/tests.php",
-        "start" : "php -S localhost:8000 index.php"
+        "start" : "php -S localhost:3000"
     },
     "require": {
         "php": "^7.0.30"
