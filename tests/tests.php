@@ -1,12 +1,12 @@
 <?php
 // Step 1
-require_once './User.php';
+require_once __DIR__.'/../models/User.php';
 // Step 2 
-require_once './Product.php'; 
-require_once './Vegetable.php';
-require_once './Cloth.php';
+require_once __DIR__.'/../models/Product.php'; 
+require_once __DIR__.'/../models/Vegetable.php';
+require_once __DIR__.'/../models/Cloth.php';
 // Step 3
-require_once './Client.php';
+require_once __DIR__.'/../models/Client.php';
 use PHPUnit\Framework\TestCase;
 class Tests extends TestCase
 {
@@ -48,28 +48,28 @@ class Tests extends TestCase
     // Check if those files exists
     public function testFileExists()
     {
-        $this->assertFileExists('./User.php');
-        $this->assertFileExists('./Client.php');
+        $this->assertFileExists(__DIR__.'/../models/User.php');
+        $this->assertFileExists(__DIR__.'/../models/Client.php');
         $this->assertFileExists('./users.php');
         $this->assertFileExists('./userTable.php');
         // STEP 2
-        $this->assertFileExists('./Product.php');
-        $this->assertFileExists('./Vegetable.php');
-        $this->assertFileExists('./Cloth.php');
+        $this->assertFileExists(__DIR__.'/../models/Product.php');
+        $this->assertFileExists(__DIR__.'/../models/Vegetable.php');
+        $this->assertFileExists(__DIR__.'/../models/Cloth.php');
         $this->assertFileExists('./products.php');
         $this->assertFileExists('./testOrder.php');
     }
     // Check if file is readable
     public function testFileIsReadable()
     {
-        $this->assertFileIsReadable('./User.php');
-        $this->assertFileIsReadable('./Client.php');
+        $this->assertFileIsReadable(__DIR__.'/../models/User.php');
+        $this->assertFileIsReadable(__DIR__.'/../models/Client.php');
         $this->assertFileIsReadable('./users.php');
         $this->assertFileIsReadable('./userTable.php');
         // STEP 2
-        $this->assertFileIsReadable('./Product.php');
-        $this->assertFileIsReadable('./Vegetable.php');
-        $this->assertFileIsReadable('./Cloth.php');
+        $this->assertFileIsReadable(__DIR__.'/../models/Product.php');
+        $this->assertFileIsReadable(__DIR__.'/../models/Vegetable.php');
+        $this->assertFileIsReadable(__DIR__.'/../models/Cloth.php');
         $this->assertFileIsReadable('./products.php');
         $this->assertFileIsReadable('./testOrder.php');
     }
@@ -166,5 +166,6 @@ class Tests extends TestCase
         $this->assertClassHasAttribute('_email', Client::class);
         $this->assertClassHasAttribute('_createdAt', Client::class);
     }
+
 }
 ?>

@@ -1,7 +1,7 @@
 <?php
-require_once 'Product.php';
-require_once 'Cloth.php';
-require_once 'Vegetable.php';
+require_once __DIR__.'/models/Product.php';
+require_once __DIR__.'/models/Cloth.php';
+require_once __DIR__.'/models/Vegetable.php';
 
 $vetement1 = new Cloth('1','Tie','40','TotoInc');
 $vetement2 = new Cloth('2','Shirt','50','TotoInc');
