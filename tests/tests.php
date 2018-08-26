@@ -50,13 +50,14 @@ class Tests extends TestCase
     {
         $this->assertFileExists(__DIR__.'/../models/User.php');
         $this->assertFileExists(__DIR__.'/../models/Client.php');
-        $this->assertFileExists('./users.php');
-        $this->assertFileExists('./userTable.php');
+        $this->assertFileExists(__DIR__.'/../data/users.php');
+        $this->assertFileExists(__DIR__.'/../views/userTable.php');
         // STEP 2
         $this->assertFileExists(__DIR__.'/../models/Product.php');
         $this->assertFileExists(__DIR__.'/../models/Vegetable.php');
         $this->assertFileExists(__DIR__.'/../models/Cloth.php');
-        $this->assertFileExists('./products.php');
+        $this->assertFileExists(__DIR__.'/../data/products.php');
+        $this->assertFileExists(__DIR__.'/../views/productTable.php');
         $this->assertFileExists('./testOrder.php');
     }
     // Check if file is readable
@@ -64,13 +65,14 @@ class Tests extends TestCase
     {
         $this->assertFileIsReadable(__DIR__.'/../models/User.php');
         $this->assertFileIsReadable(__DIR__.'/../models/Client.php');
-        $this->assertFileIsReadable('./users.php');
-        $this->assertFileIsReadable('./userTable.php');
+        $this->assertFileIsReadable(__DIR__.'/../data/users.php');
+        $this->assertFileIsReadable(__DIR__.'/../views/userTable.php');
         // STEP 2
         $this->assertFileIsReadable(__DIR__.'/../models/Product.php');
         $this->assertFileIsReadable(__DIR__.'/../models/Vegetable.php');
         $this->assertFileIsReadable(__DIR__.'/../models/Cloth.php');
-        $this->assertFileIsReadable('./products.php');
+        $this->assertFileIsReadable(__DIR__.'/../data/products.php');
+        $this->assertFileIsReadable(__DIR__.'/../views/productTable.php');
         $this->assertFileIsReadable('./testOrder.php');
     }
     // Check if User class attribute "$_email" is an email
