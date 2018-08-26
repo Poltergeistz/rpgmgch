@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Srock Produits</title>
+    <title>Stock Produits</title>
 </head>
 <body>
 <table>
@@ -17,7 +17,7 @@
 <th>Expires At</th>
 </tr>
 <?php
-$basket = require('products.php');
+$basket = require(__DIR__.'/data/products.php');
     foreach($basket as $value)
     {
         echo '<tr><td>'.$value->getId().'</td>';

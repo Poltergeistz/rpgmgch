@@ -1,6 +1,6 @@
 <?php
-$products = include('./products.php');
-$users = include('./users.php');
+$products = include(__DIR__.'/data/products.php');
+$users = include(__DIR__.'/data/users.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">

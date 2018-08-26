@@ -14,7 +14,7 @@
 <th>Created At</th>
 </tr>
 <?php
-$users = require('users.php');
+$users = require(__DIR__.'/data/users.php');
 foreach($users as $value)
     {
         echo '<tr><td>'.$value->getId().'</td>';
